@@ -4,6 +4,9 @@ import React from 'react'
 import Home from '../screens/Home';
 import Dream from '../screens/Dream';
 import DreamDetails from '../screens/DreamDetails';
+import LatHtaukQuestion from '../screens/LatHtaukQuestion';
+import LatHtaukNumber from '../screens/LatHtaukNumber';
+import LatHtaukAnswer from '../screens/LatHtaukAnswer';
 
 
 const Stack = createNativeStackNavigator();
@@ -16,6 +19,9 @@ const MainRoute = () => {
             <Stack.Screen name='home' component={Home} />
             <Stack.Screen name='dream' component={Dream} />
             <Stack.Screen name='dreamdetails' component={DreamDetails} />
+            <Stack.Screen name='latquestion' component={LatHtaukQuestion} />
+            <Stack.Screen name='latnumber' component={LatHtaukNumber} />
+            <Stack.Screen name='latanswer' component={LatHtaukAnswer} />
         </Stack.Navigator>
     </NavigationContainer>
   )

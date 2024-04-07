@@ -13,22 +13,22 @@ const DreamWithWord = () => {
   useEffect(() => { 
      setTimeout(() => { 
         // setLoading(false);
-        setMessage("Please enter a word")
+        setMessage("အိမ်မက်ထဲမှဇာတ်ကောင်နာမည်ကိုရိုက်ပါ")
       } ,300)
    } ,[])
 
 
    const searchData =  (text) => {
-    console.log("preaa")
+    // console.log("preaa")
     if(!text){
      setData([]);
-     setMessage("You do not enter any word");
+     setMessage("အိမ်မက်ထဲမှဇာတ်ကောင်နာမည်ကိုရိုက်ပါ");
      return ;
     }
     setLoading(true);
     const arr =  dreamData.BlogDetail.filter(item => item.BlogContent.includes(text));
     setData(arr);
-    setTimeout(() => setLoading(false) ,500)
+    setTimeout(() => setLoading(false) ,300)
     
    }
 
@@ -42,13 +42,13 @@ const DreamWithWord = () => {
       <View style={styles.btnContainer} >
        <TextInput style={styles.textinput} onChangeText={(val) => setText(val)} />
        <Pressable style={styles.btn} onPress={() => searchData(text)} >
-        <Text style={{textAlign:"center",color:"#333"}} > Search </Text>
+        <Text style={{textAlign:"center",color:"#fff"}} > Search </Text>
        </Pressable>
       </View>
 
       {
-        loading ? ( <View style={{flex:1,backgroundColor:"#fff",justifyContent:"center",alignItems:"center"}} >
-        <ActivityIndicator size={22} color={"red"} />
+        loading ? ( <View style={{flex:1,backgroundColor:"#535d6cff",justifyContent:"center",alignItems:"center"}} >
+        <ActivityIndicator size={22} color={"#fff"} />
     </View>) : <View showsVerticalScrollIndicator={false} >
         {
             data.length > 0 ?   (<FlatList 
@@ -62,7 +62,7 @@ const DreamWithWord = () => {
                   </View>
                 )
               }}
-              />)  : ( <Text style={{paddingTop:100,textAlign:"center"}} > {message} </Text>  ) 
+              />)  : ( <Text style={{paddingTop:100,textAlign:"center",color:"#fff"}} > {message} </Text>  ) 
         }
       </View>
       }
@@ -98,8 +98,10 @@ const styles = StyleSheet.create({
       // height:36,
       borderRadius:6,
       borderWidth:1,
-      borderColor:"#33333333",
+      borderColor:"#ffffff55",
       textAlign:"center",
+      color:"#fff",
+      fontFamily:"sakar"
       // backgroundColor:"red"
     },
     btn:{
@@ -108,21 +110,23 @@ const styles = StyleSheet.create({
       paddingHorizontal:10,
       // paddingVertical:6,
       borderRadius:6,
-      backgroundColor:"gold",
+      backgroundColor:"#333",
       alignItems:"center",
       justifyContent:"center",
       borderWidth:1,
-      borderColor:"#33333333"
+      borderColor:"#ffffff55"
     },
     card:{
-      backgroundColor:"#fff",
+      backgroundColor:"#ffffff11",
       paddingVertical:10,
       paddingHorizontal:5,
-      marginTop:5
+      marginTop:5,
+      borderRadius:4
    },
    text:{
-       color:"#333",
-       fontSize:16,
+       color:"#fff",
+      //  fontSize:16,
+      fontFamily:"sakar",
        lineHeight:26
    }
 })

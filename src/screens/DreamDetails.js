@@ -18,8 +18,8 @@ const DreamDetails = ({route,navigation}) => {
 
      if(loading){
         return(
-            <View style={{flex:1,backgroundColor:"#fff",justifyContent:"center",alignItems:"center"}} >
-            <ActivityIndicator size={22} color={"red"} />
+            <View style={{flex:1,backgroundColor:"#535d6cff",justifyContent:"center",alignItems:"center"}} >
+            <ActivityIndicator size={22} color={"#fff"} />
             </View>
         )
      }
@@ -33,7 +33,8 @@ const DreamDetails = ({route,navigation}) => {
     renderItem={({item,index}) => {
            return(
             <View key={index} style={styles.card} >
-                <Text style={styles.text} > {item.BlogContent} </Text>
+                {/* <Text style={{color:"#fff"}} > ({index+1}) </Text> */}
+                <Text style={styles.text} >   {item.BlogContent} </Text>
             </View>    
            )
     }}
@@ -47,20 +48,26 @@ const DreamDetails = ({route,navigation}) => {
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        backgroundColor:"#f3f3f3",
+        backgroundColor:"#535d6cff",
         paddingTop:StatusBar.currentHeight,
-        paddingHorizontal:5
+        // paddingHorizontal:5
     },
     card:{
-       backgroundColor:"#fff",
+       backgroundColor:"#ffffff22",
        paddingVertical:10,
        paddingHorizontal:5,
-       marginTop:5
+       marginTop:5,
+       borderRadius:4,
+       flexDirection:"row"
     },
     text:{
-        color:"#333",
+        // flex:1,
+        color:"#fff",
         fontSize:16,
-        lineHeight:26
+        fontFamily:"sakar",
+        lineHeight:24,
+        textAlign:"justify"
+        // backgroundColor:"gold"
     }
 })
 

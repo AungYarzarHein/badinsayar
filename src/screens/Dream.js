@@ -20,7 +20,7 @@ const Dream = ({navigation}) => {
 
   if(loading) {
     return(
-        <View style={{flex:1,backgroundColor:"#fff",justifyContent:"center",alignItems:"center"}} >
+        <View style={{flex:1,backgroundColor:"#535d6cff",justifyContent:"center",alignItems:"center"}} >
             <ActivityIndicator size={22} color={"red"} />
         </View>
     )
@@ -41,12 +41,12 @@ const Dream = ({navigation}) => {
      showsVerticalScrollIndicator={false}
      numColumns={2}
      data={dreamHeader.BlogHeader} 
-     contentContainerStyle={{paddingVertical:20,backgroundColor:"#f2f2f2",gap:5,paddingHorizontal:4}}
+     contentContainerStyle={{paddingVertical:20,gap:5,paddingHorizontal:4}}
      renderItem={({item,index}) => {
       return(
         <Pressable key={index} onPress={() => navigation.navigate("dreamdetails",{text:item.BlogId})} style={styles.letterCard} > 
         <Text style={styles.cardTitle}  > {item.BlogTitle.slice(0,5)} </Text>
-         <Text style={{textAlign:"center"}} > {item.BlogTitle.slice(5).split(" ").join("")} </Text>
+         <Text style={{textAlign:"center",fontFamily:"sakar",color:"#fff"}} > {item.BlogTitle.slice(5).split(" ").join("")} </Text>
         </Pressable>
       )
      } }
@@ -57,11 +57,11 @@ const Dream = ({navigation}) => {
 
 <View style={styles.btnContainer} >
 <Pressable style={styles.btn} onPress={onSearchDreamBtn} >
-  <Text style={styles.btnText} > Helo </Text>
+  <Text style={styles.btnText} > နာမည်ရိုက်ရှာရန် </Text>
 </Pressable>
 
 <Pressable style={styles.btn} onPress={onSearchDreamByLetter} >
-  <Text style={styles.btnText} > Helooo </Text>
+  <Text style={styles.btnText} > စာလုံးဖြင့်ရှာရန် </Text>
 </Pressable>
 </View>
    </View>
@@ -72,7 +72,7 @@ const Dream = ({navigation}) => {
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        backgroundColor:"#f2f2f2",
+        backgroundColor:"#535d6cff",
         paddingTop:StatusBar.currentHeight
     },
     pagerview:{
@@ -86,35 +86,38 @@ const styles = StyleSheet.create({
     btnContainer:{
       padding:5,
       flexDirection:"row",
-      backgroundColor:"#f9f9f9"
+      gap:5
+      // backgroundColor:"#535d6cff"
     },
     btn:{
       width: (width-15)/2,
-      backgroundColor:"red",
+      backgroundColor:"#333",
       borderRadius:6,
-      borderWidth:3,
+      borderWidth:2,
       borderColor:"#ffffff55"
     },
     btnText:{
       paddingVertical:10,
+      fontFamily:"sakar",
       textAlign:"center",
       color:"#fff"
     },
     letterCard:{
       width:(width-18)/2 ,
       height:(width-15)/2,
-      backgroundColor:"#fff",
+      // backgroundColor:"#fff",
       marginHorizontal:3,
-      borderRadius:6,
+      borderRadius:4,
       borderWidth:1,
-      borderColor:"#33333311",
+      borderColor:"#ffffff55",
       justifyContent:"center",
       alignItems:"center",
       gap:5
     },
     cardTitle:{
       fontSize:36,
-      color:"#333"
+      color:"#fff",
+      fontFamily:"sakar"
 
     }
 })
