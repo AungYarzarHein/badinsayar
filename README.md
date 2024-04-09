@@ -1,4 +1,4 @@
-# Badinsayar App (React native);
+# Baydinsayar App (React native);
 
  I combined the two projects [Min Thein Kha - Lat Htauk Bay Din](https://github.com/sannlynnhtun-coding/MinTheinKha-LatHtaukBayDin) and [Dream Dictionary](https://github.com/sannlynnhtun-coding/Dream-Dictionary)
 
