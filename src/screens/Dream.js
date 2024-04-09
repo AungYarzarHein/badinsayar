@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Dimensions, FlatList, Pressable, StatusBar, StyleSheet, Text, View , ActivityIndicator } from 'react-native'
+import { Dimensions, FlatList, Pressable, StatusBar, StyleSheet, Text, View , ActivityIndicator, ImageBackground } from 'react-native'
 import PagerView from 'react-native-pager-view';
 import dreamHeader from "../datafiles/DreamHeader.json";
 import DreamWithWord from '../screenComponents/DreamWithWord';
+import dreamBg from "../datafiles/dream.png";
+
 
 
 const { width , height } = Dimensions.get("window") ;
@@ -20,16 +22,16 @@ const Dream = ({navigation}) => {
 
   if(loading) {
     return(
-        <View style={{flex:1,backgroundColor:"#535d6cff",justifyContent:"center",alignItems:"center"}} >
-            <ActivityIndicator size={22} color={"red"} />
-        </View>
+        <ImageBackground style={{flex:1,justifyContent:"center",alignItems:"center"}} source={dreamBg} >
+            <ActivityIndicator size={22} color={"#fff"} />
+        </ImageBackground>
     )
    }
 
 
 
   return (
-   <View style={styles.container} >
+   <ImageBackground style={styles.container} source={dreamBg} >
 <PagerView initialPage={0} scrollEnabled={false} ref={ref} style={styles.pagerview}  >
 
  <View key={1} style={styles.page} >
@@ -64,7 +66,7 @@ const Dream = ({navigation}) => {
   <Text style={styles.btnText} > စာလုံးဖြင့်ရှာရန် </Text>
 </Pressable>
 </View>
-   </View>
+   </ImageBackground>
   )
 }
 
@@ -91,9 +93,9 @@ const styles = StyleSheet.create({
     },
     btn:{
       width: (width-15)/2,
-      backgroundColor:"#333",
+      backgroundColor:"#33333333",
       borderRadius:6,
-      borderWidth:2,
+      borderWidth:1,
       borderColor:"#ffffff55"
     },
     btnText:{
@@ -105,7 +107,7 @@ const styles = StyleSheet.create({
     letterCard:{
       width:(width-18)/2 ,
       height:(width-15)/2,
-      // backgroundColor:"#fff",
+      backgroundColor:"#33333366",
       marginHorizontal:3,
       borderRadius:4,
       borderWidth:1,

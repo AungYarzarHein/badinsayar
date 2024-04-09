@@ -1,16 +1,21 @@
 import React from 'react'
-import { Pressable, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { ImageBackground, Pressable, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import bg from "../datafiles/home.jpg";
+
 
 const Home = ({navigation}) => {
   return (
-   <View style={styles.container} >
- <Pressable onPress={() => navigation.navigate("latquestion")} style={{width:120,paddingVertical:10,backgroundColor:"gold"}}  >
-  <Text> To Dream </Text>
+   <View style={{flex:1}} >
+    <ImageBackground style={styles.container} source={bg} > 
+    <Pressable onPress={() => navigation.navigate("latquestion")} style={styles.btn}  >
+  <Text style={styles.btnText} > လက်ထောက်ဗေဒင် </Text>
  </Pressable>
 
- <Pressable onPress={() => navigation.navigate("dream")} style={{width:120,paddingVertical:10,backgroundColor:"gold"}}  >
-  <Text> To Dream </Text>
+ <Pressable onPress={() => navigation.navigate("dream")} style={styles.btn}  >
+  <Text style={styles.btnText} > အိမ်မက်အဟော </Text>
  </Pressable>
+    </ImageBackground>
+ 
    </View>
   )
 }
@@ -22,7 +27,22 @@ const styles = StyleSheet.create({
         backgroundColor:"#535d6cff",
         paddingTop:StatusBar.currentHeight,
         justifyContent:"center",
-        alignItems:"center"
+        alignItems:"center",
+        gap:20
+    },
+    btn:{
+      paddingVertical:10,
+      width:200,
+      borderRadius:12,
+      borderWidth:1,
+      borderColor:"#ffffff55",
+      marginTop:10,
+      paddingHorizontal:10
+    },
+    btnText:{
+      color:"#fff",
+      textAlign:"center",
+      fontFamily:"sakar"
     }
 })
 

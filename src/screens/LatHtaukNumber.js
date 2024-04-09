@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { ActivityIndicator, Dimensions, FlatList, Pressable, StatusBar, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, Dimensions, FlatList, Image, ImageBackground, Pressable, StatusBar, StyleSheet, Text, View } from 'react-native';
 import Nam from "../datafiles/LatHtaukList.json";
+import bg from "../datafiles/home.jpg";
+
 
 
 const { width , height } = Dimensions.get("window");
@@ -25,7 +27,7 @@ const LatHtaukNumber = ({route,navigation}) => {
     const {questionName,questionNo} = route.params
     
 
-    console.log("Nama")
+   
 
     const onPressHandler = (text) => {
         const answerId = myanToEng[text] ;
@@ -40,16 +42,16 @@ const LatHtaukNumber = ({route,navigation}) => {
 
     if(loading){
         return(
-            <View style={{flex:1,justifyContent:"center",alignItems:"center",backgroundColor:"#535d6cff"}} >
+            <ImageBackground style={{flex:1,justifyContent:"center",alignItems:"center",backgroundColor:"#535d6cff"}} source={bg} >
                 <ActivityIndicator size={22} color={"#fff"} />
-            </View>
+            </ImageBackground>
         )
     }
 
 
 
   return (
-    <View style={styles.container} >
+    <ImageBackground style={styles.container} source={bg} >
         <View style={{paddingTop:15,paddingHorizontal:5}} >
             <Text style={{fontFamily:"sakar",color:"#fff",paddingVertical:10,textAlign:"center",fontSize:16,lineHeight:26}} > {questionName} </Text>
         </View>
@@ -73,7 +75,7 @@ const LatHtaukNumber = ({route,navigation}) => {
         )
        }}
         />
-    </View>
+    </ImageBackground>
   )
 }
 
@@ -89,7 +91,7 @@ const styles = StyleSheet.create({
     card:{
         width:cardWidth,
         height:cardWidth,
-        backgroundColor:"#ffffff22",
+        backgroundColor:"#33333399",
         marginHorizontal:0.5,
         justifyContent:"center",
         alignItems:"center",

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { FlatList, Pressable, StatusBar, StyleSheet, Text, View , ActivityIndicator, TextInput } from 'react-native';
+import { FlatList, Pressable, StatusBar, StyleSheet, Text, View , ActivityIndicator, TextInput, ImageBackground } from 'react-native';
 import question from "../datafiles/LatHtaukQuestion.json";
-
+import bg from "../datafiles/home.jpg"
 
 
 
@@ -32,14 +32,14 @@ const LatHtaukQuestion = ({navigation}) => {
 
     if(loading){
         return(
-            <View style={{flex:1,justifyContent:"center",alignItems:"center",backgroundColor:"#535d6cff"}} >
-                <ActivityIndicator size={22} color={"#333"} />
-            </View>
+            <ImageBackground style={{flex:1,justifyContent:"center",alignItems:"center",backgroundColor:"#535d6cff"}} source={bg} >
+                <ActivityIndicator size={22} color={"#fff"} />
+            </ImageBackground>
         )
     }
 
   return (
-   <View style={styles.container} >
+   <ImageBackground style={styles.container} source={bg} >
     <View style={styles.searchBar} >
      <TextInput style={styles.inputtext} placeholder='Type something' placeholderTextColor={"#ffffff88"} onChangeText={val => setSearchText(val)} />
      <Pressable style={styles.btn} onPress={() => onSearchHandler(searchText)} >
@@ -59,7 +59,7 @@ const LatHtaukQuestion = ({navigation}) => {
         )
     }}
     />
-   </View>
+   </ImageBackground>
   )
 }
 
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
         paddingTop:StatusBar.currentHeight
     },
     card:{
-    //   backgroundColor:"red"
+      backgroundColor:"#535d6c77",
         borderWidth:1,
         borderRadius:4,
         borderColor:"#ffffff33",

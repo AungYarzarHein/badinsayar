@@ -1,6 +1,8 @@
 import React, { useEffect, useState  } from 'react'
-import { ActivityIndicator, FlatList, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { ActivityIndicator, FlatList, ImageBackground, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import dreamData from "../datafiles/DreamDictionary.json";
+import dreamBg from "../datafiles/dream.png";
+
 
 
 const DreamWithWord = () => {
@@ -47,9 +49,9 @@ const DreamWithWord = () => {
       </View>
 
       {
-        loading ? ( <View style={{flex:1,backgroundColor:"#535d6cff",justifyContent:"center",alignItems:"center"}} >
+        loading ? ( <ImageBackground style={{flex:1,backgroundColor:"#535d6cff",justifyContent:"center"}} source={dreamBg} >
         <ActivityIndicator size={22} color={"#fff"} />
-    </View>) : <View showsVerticalScrollIndicator={false} >
+    </ImageBackground>) : <View showsVerticalScrollIndicator={false} >
         {
             data.length > 0 ?   (<FlatList 
               showsVerticalScrollIndicator={false}
@@ -62,7 +64,7 @@ const DreamWithWord = () => {
                   </View>
                 )
               }}
-              />)  : ( <Text style={{paddingTop:100,textAlign:"center",color:"#fff"}} > {message} </Text>  ) 
+              />)  : ( <Text style={{paddingTop:100,textAlign:"center",color:"#fff",fontFamily:"sakar"}} > {message} </Text>  ) 
         }
       </View>
       }

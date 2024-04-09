@@ -1,6 +1,7 @@
 import React from 'react'
-import { StatusBar, StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, StatusBar, StyleSheet, Text, View } from 'react-native';
 import data from "../datafiles/MinTheinKha.LatHtaukBayDin.json";
+import bg from "../datafiles/home.jpg";
 
 
 
@@ -11,13 +12,13 @@ const LatHtaukAnswer = ({route,navigation}) => {
     
     
   return (
-    <View style={styles.container} >
+    <ImageBackground style={styles.container} source={bg} >
         <Text style={{color:"gold",paddingVertical:10,fontSize:18,marginTop:50,fontFamily:"sakar"}} > မေးမြန်းထားသောအကြောင်းအရာ </Text>
        <Text style={styles.question} > {questionName} </Text>
        <Text style={{color:"gold",paddingVertical:10,fontSize:18,marginTop:50,fontFamily:"sakar"}} > ဟောပြောချက် </Text>
        <Text style={styles.question} > {answer[0].answerResult} </Text>
     
-    </View>
+    </ImageBackground>
   )
 }
 
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
     container:{
         flex:1,
         backgroundColor:"#535d6cff",
-        // justifyContent:"center",
+        justifyContent:"center",
         alignItems:"center",
         paddingHorizontal:10,
         paddingTop:StatusBar.currentHeight

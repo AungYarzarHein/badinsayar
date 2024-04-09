@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { FlatList, StatusBar, StyleSheet, View , ActivityIndicator, Text } from 'react-native';
+import { FlatList, StatusBar, StyleSheet, View , ActivityIndicator, Text, ImageBackground } from 'react-native';
 import data from "../datafiles/DreamDictionary.json";
+import dreamBg from "../datafiles/dream.png";
+
 
 
 const DreamDetails = ({route,navigation}) => {
@@ -18,15 +20,15 @@ const DreamDetails = ({route,navigation}) => {
 
      if(loading){
         return(
-            <View style={{flex:1,backgroundColor:"#535d6cff",justifyContent:"center",alignItems:"center"}} >
+            <ImageBackground style={{flex:1,backgroundColor:"#535d6cff",justifyContent:"center",alignItems:"center"}} source={dreamBg} >
             <ActivityIndicator size={22} color={"#fff"} />
-            </View>
+            </ImageBackground>
         )
      }
 
 
   return (
-    <View style={styles.container} >
+    <ImageBackground style={styles.container} source={dreamBg} >
     <FlatList 
     showsVerticalScrollIndicator={false}
     data={dream}
@@ -40,7 +42,7 @@ const DreamDetails = ({route,navigation}) => {
     }}
     contentContainerStyle={{gap:5,paddingHorizontal:5,paddingVertical:50}}
     />
-    </View>
+    </ImageBackground>
   )
 }
 
@@ -53,19 +55,21 @@ const styles = StyleSheet.create({
         // paddingHorizontal:5
     },
     card:{
-       backgroundColor:"#ffffff22",
+       backgroundColor:"#33333366",
        paddingVertical:10,
        paddingHorizontal:5,
-       marginTop:5,
+       marginTop:3,
        borderRadius:4,
-       flexDirection:"row"
+       flexDirection:"row",
+       borderWidth:1,
+       borderColor:"#ffffff33"
     },
     text:{
         // flex:1,
         color:"#fff",
-        fontSize:16,
+        // fontSize:16,
         fontFamily:"sakar",
-        lineHeight:24,
+        lineHeight:26,
         textAlign:"justify"
         // backgroundColor:"gold"
     }
