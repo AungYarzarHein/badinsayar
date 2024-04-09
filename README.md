@@ -14,8 +14,8 @@ For armebi-v7a [download](https://drive.google.com/file/d/1ezYQj5KGrhjNmaL9E_a0o
 
 
 ## App Screenshots
-[screen1](./src/datafiles/badin1.png)
-[screen2](./src/datafiles/badin2.png)
+![screen1](./src/datafiles/badin1.png)
+![screen2](./src/datafiles/badin2.png)
 
 
 
